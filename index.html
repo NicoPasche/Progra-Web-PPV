@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>N&V Propiedades</title>
+	<link rel="icon" type="image/gif/png" href="nvico.ico">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	  <script type="text/javascript" src="test.js"></script>
+	<script type="text/javascript" src="idx.js"></script>
+	
+</head>
+<body>
+<!-- Start Header Area -->
+			<header class="default-header">
+				
+
+				<div class="topnav2">
+  					<a class="active" href="index.html">Home</a>
+  					<a href="vender.html">Publicar</a>
+  					<a href="registro.html" onclick="centeredPopup(this.href,'myWindow','1000','900','yes');return false">Registrarse</a>
+  					<div class="login-container">
+    				<form action="/action_page.php">
+      					
+      					<p><a href="login.html" onclick="centeredPopup(this.href,'myWindow','1000','600','yes');return false">Login</a></p>
+    				</form>
+  					</div>
+				</div>
+				<img src="img/nvpro.png" id="logo">
+				
+
+			</header>
+<!-- End Header Area -->
+
+<!--Formulario de busqueda-->
+	<div class="overlay">
+		<div class="search-field" style="height: 500px;">
+			<form class="search-form">
+				<div class="titulo">Buscar propiedades para PROBANDOOOOOOOOO:
+					<label class="switchBtn">
+    					<input type="checkbox" onclick="cambiar()">
+    					<div class="slide round">Comprar</div>
+					</label>
+
+
+				</div>
+
+				<div class="ubicacion">
+					<select name="location" class="select1" required>
+						<option data-display="Choose locations">Ubicacion</option>
+						<option value="1">Palermo</option>
+						<option value="2">Recoleta</option>
+						<option value="3">Puerto Madero</option>
+					</select>
+				</div>
+
+				<div class="tipo">
+					<select name="property-type" class="select1" required>
+						<option data-display="Property Type">Tipo de Propiedad</option>
+						<option value="1">Casa</option>
+						<option value="2">Departamento</option>
+						<option>Lote</option>
+					</select>
+				</div>
+
+				<div class="habitaciones">
+					<select name="bedroom" class="select1" required>
+						<option data-display="Bedrooms">Habitaciones</option>
+						<option value="1">Una</option>
+						<option value="2">Dos</option>
+						<option value="3">Tres</option>
+						<option value="4">Cuatro</option>
+						<option value="5">Cinco</option>
+						<option value="6">Seis</option>
+					</select>
+				</div>
+
+				<div class="range" id="precio">
+					<p>Rango Precio:</p>
+					<p>Valor: <span id="demo"></span></p>
+					<input type="range" id="range" value="" name="range" min="" max="4000000" class="rango" />
+				</div>												    
+				<div class="boton-busqueda">
+					<button onclick="" class="buscar" style="height: 55px;"><span class="txtbuscar">Buscar Propiedades</span></button>
+				</div>
+			</form>
+		</div>
+	</div>
+	 
+		<section class="about-area">
+				<div class="container-fluid">
+					<div class="row d-flex justify-content-end align-items-center">
+						<div class="info">
+							<div class="txt-info">
+								<h4 class="h-inf">¿Por qué elegirnos?</h4>
+								<p>
+									Actualmente somos la mejor inmobiliria en 22 provincias dando servicios a todos y todas
+								</p>
+							</div>
+							<div class="single-about pb-30">
+								<h4 class="h-inf">Nuestras Propiedades</h4>
+								<p>
+									Tenemos una amplia variedad de propiedades tanto a la venta como para alquilar
+								</p>
+							</div>
+							<div class="single-about">
+								<h4 class="h-inf">Aviso Legal</h4>
+								<p>
+									No copie nuestra pagina, todo derecho de autor es reservado por dichos creadores de esta página. Cualquier consulta hable con nuestro abogado (15-321-72-611)
+								</p>
+							</div>																
+						</div>			
+						<div class="caja-img">
+							<img class="img-fluid" src="img/about-img.jpg" alt="">
+						</div>			
+					</div>
+				</div>	
+			</section>
+			<!-- End About Area -->
+			<!-- Start contact-info Area -->
+			<section class="contact-info-area">
+				<div class="contacto">
+					<div class="row">
+						<div class="single-info1">
+							 <h4 id="visit">Visite Nuestra Oficina</h4>
+							 <p>
+							 	Avenida 25 de mayo,buenos aires, argentina<br>
+							 </p>                                   
+						</div>
+						<div class="single-info2">
+							 <h4 id="call">Llámenos</h4>
+							 <p>
+								Telefono 1: 012-6532-568-9746 <br>
+								Telefono 2: 012-6532-568-9748 <br>
+								FAX: 02-6532-568-746
+							 </p>                                   
+						</div>
+						<div class="single-info3">
+							 <h4 id="emailus">Envienos un Email</h4>
+							 <p>
+								hello@nvpropiedades.com <br>
+								mainhelpinfo@nvpropiedades.com <br>
+								infohelp@nvpropiedades.com
+							 </p>                                   
+						</div>
+						<div class="single-info4">
+							 <h4 id="cust">Atención al Cliente</h4>
+							 <p>
+							 	support@nvpropiedades.com <br>
+								emergencysupp@nvpropiedades.com <br>
+								extremesupp@nvpropiedades.com
+							 </p>                                   
+						</div>																		
+					</div>
+				</div>	
+			</section>
+			<!-- End contact-info Area -->
+			<footer>
+				<div class="social">
+					<h6 class="folow">Seguinos en las Redes</h6>
+								<div class="footer-social">
+									<a href=""><img id="fb" src="img/facebook.png"></a>
+									<a href=""><img id="insta" src="img/instagram.png"></a>
+									<a href=""><img src="img/pinterest.png" id="pint"></a>
+									<a href=""><img src="img/twitter.png" id="twitter"></a>
+								</div>
+				</div>
+			</footer>
+
+
+
+
+
+
+</body>
+</html>

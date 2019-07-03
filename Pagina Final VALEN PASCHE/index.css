@@ -199,7 +199,7 @@ select{
 
 }
 .ubicacion{
-	position: relative;
+	position: absolute;
 	width: 10%;
 
 }
@@ -295,9 +295,9 @@ select{
 
 .img-fluid{
 	width:50%;
-  height: 70%;
+  height: 24.69%;
 	margin-left:50%;
-	position: relative;
+	position: absolute;
 	line-height: 1.625em;
 }
 .contacto{
@@ -364,7 +364,7 @@ footer{
 }
 .social{
 	position: relative;
-	margin-top: 25%;
+	margin-top: 70%;
   font-family:"Poppins", sans-serif;
   height: 1.5cm;
 }

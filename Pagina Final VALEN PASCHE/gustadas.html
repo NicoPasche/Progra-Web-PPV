@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>N&V Propiedades</title>
+  <link rel="icon" type="image/gif/png" href="nvico.ico">
+  <link rel="stylesheet" type="text/css" href="test.css">
+  <link rel="stylesheet" type="text/css" href="gust.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.css">
+    
+    <script type="text/javascript" src="test.js"></script>
+  <script type="text/javascript" src="idx.js"></script>
+  
+</head>
+<body>
+<!-- Start Header Area -->
+      <header class="default-header">
+        
+
+        <div class="topnav2">
+            <a class="" href="index.html">Home</a>
+            <a href="vender.html">Publicar</a>
+            <a href="registro.html" onclick="centeredPopup(this.href,'myWindow','1000','900','yes');return false">Registrarse</a>
+            <div class="login-container">
+            <form action="/action_page.php">
+                
+                <p><a href="login.html" onclick="centeredPopup(this.href,'myWindow','1000','600','yes');return false">Login</a></p>
+            </form>
+            </div>
+        </div>
+        <img src="img/nvpro.png" id="logo">
+        
+
+      </header>
+<!-- End Header Area -->
+
+  <h2>Propiedades</h2>
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Todas</button>
+  <button class="btn" onclick="filterSelection('Duplex')"> Alquiler</button>
+  <button class="btn" onclick="filterSelection('Triplex')"> Compra</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column Duplex">
+    <div class="content">
+      <img src="Duplex1.jpg" alt="Duplex" style="width:100%;max-width:250px">
+      <h4>Direccion 1</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Ya no me Interesa</button>
+
+       </div>
+  </div>
+  <div class="column Duplex">
+    <div class="content">
+      <img src="Duplex2.jpg" alt="Duplex" style="width:100%;max-width:250px">
+      <h4>Direccion 2</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Borrar Publicacion Guardada</button>
+
+    </div>
+  </div>
+  <div class="column Duplex">
+    <div class="content">
+      <img src="Duplex3.jpg" alt="Duplex" style="width:100%;max-width:250px">
+      <h4>Direccion 3</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Borrar Publicacion Guardada</button>
+
+    </div>
+  </div>
+
+  <div class="column Triplex">
+    <div class="content">
+      <img src="Triplex1.jpg" alt="Triplex" style="width:100%;max-width:250px">
+      <h4>Direccion 4</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Borrar Publicacion Guardada</button>
+
+    </div>
+  </div>
+  <div class="column Triplex">
+    <div class="content">
+      <img src="Triplex2.jpg" alt="Triplex" style="width:100%;max-width:250px">
+      <h4>Direccion 5</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Borrar Publicacion Guardada</button>
+
+    </div>
+  </div>
+  <div class="column Triplex">
+    <div class="content">
+      <img src="Triplex3.jpg" alt="Triplex" style="width:100%;max-width:250px">
+      <h4>Direccion 6</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Borrar Publicacion Guardada</button>
+
+    </div>
+  </div>
+
+  <div class="column Monoambiente">
+    <div class="content">
+      <img src="Monoambiente1.jpg" alt="Monoambiente" style="width:100%;max-width:250px">
+      <h4>Direccion 7</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Borrar Publicacion Guardada</button>
+
+    </div>
+  </div>
+  <div class="column Monoambiente">
+    <div class="content">
+      <img src="Monoambiente2.jpg" alt="Monoambiente" style="width:100%;max-width:250px">
+      <h4>Direccion 8</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Borrar Publicacion Guardada</button>
+
+    </div>
+  </div>
+  <div class="column Monoambiente">
+    <div class="content">
+      <img src="Monoambiente3.jpg" alt="Monoambiente" style="width:100%;max-width:250px">
+      <h4>Direccion 9</h4>
+      <p>Descripción</p>
+      <button id="ynmi">Borrar Publicacion Guardada</button>
+
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<footer>
+        <div class="social">
+          <h6 class="folow">Seguinos en las Redes</h6>
+                <div class="footer-social">
+                  <a href=""><img id="fb" src="img/facebook.png"></a>
+                  <a href=""><img id="insta" src="img/instagram.png"></a>
+                  <a href=""><img src="img/pinterest.png" id="pint"></a>
+                  <a href=""><img src="img/twitter.png" id="twitter"></a>
+                </div>
+        </div>
+      </footer>
+
+
+
+
+</body>
+</html>

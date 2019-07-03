@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link type="text/css" href="login.css" rel="stylesheet"/>
+	<link rel="icon" type="image/gif/png" href="nvico.ico"/>
+	<title>N&V Propiedades</title>
+</head>
+
+<body onkeypress="PCWin(event)" onload="pageLoad()">
+	<div id="top-wrapper">
+		<div id="banner" class="top-header">
+			<div class="top-header-wrap">
+				<h1 id="product-tag"></h1>
+			</div>
+		</div>
+	<div class="loginBox">
+			<div id="noteDiv">
+				<p id="note"></p>
+		</div>
+		<div class="panelThre" align="center">
+			<div align="center" class="picDiv" align="center">
+				<ul>
+					<img src="nvpro.png"  onclick="location.href='login.html'"/>
+					<li id="unLi" class="unLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Usuario" /></li>
+					<li class="blank"></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="pcPassword"  placeholder="Email" /></li>
+				</ul>
+				<label id="loginBtn" class="loginBtn" onclick="location.href='login.html'" />Enviar contraseñá al email</label>
+			<div>
+				
+			</div>	
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	<form action="/userRpm/LoginRpm.htm" method="get" id="loginForm" enctype="multipart/form-data">
+	    <input type="hidden" value="Save" name="Save" />    
+	</form>
+
+
+
+</body>
+</html>

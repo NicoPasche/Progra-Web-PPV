@@ -180,9 +180,9 @@ input:checked + .slide:before {
     border-radius: 50%;
 }
 .tipo{
-	position: relative;
-	margin-left:9cm;
-  margin-top:-4.8%;
+	position: absolute;
+	margin-left:30%;
+  margin-top:-4.5%;
 }
 select{
   border-radius: 4px;
@@ -204,9 +204,9 @@ select{
 
 }
 .habitaciones{
-	position: relative;
-	margin-top:-2.8%;
-	margin-left: 17cm;
+	position: absolute;
+	margin-top:-4.5%;
+	margin-left: 60%;
 
 
 

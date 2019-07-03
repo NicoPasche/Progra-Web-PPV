@@ -1,99 +1,66 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 22-11-2018 a las 23:11:32
--- Versión del servidor: 5.6.35
--- Versión de PHP: 7.1.8
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 03-07-2019 a las 23:59:55
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- Base de datos: `NV-Propiedades`
+-- Base de datos: `nv_prop`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Publicaciones`
+-- Estructura de tabla para la tabla `publicaciones`
 --
 
-CREATE TABLE `Publicaciones` (
+CREATE TABLE `publicaciones` (
   `ID_publicacion` int(255) NOT NULL,
-  `Tipo` varchar(255) NOT NULL,
-  `Barrio` varchar(255) NOT NULL,
+  `ID_Tipo` int(255) NOT NULL,
   `Domicilio` varchar(255) NOT NULL,
+  `idBarrio` int(255) NOT NULL,
   `Numero de Habitaciones` int(255) NOT NULL,
   `Precio` int(255) NOT NULL,
   `Numero de Contacto` varchar(255) NOT NULL,
   `Email` varchar(255) NOT NULL,
   `Descripcion` varchar(255) NOT NULL,
   `Fecha de Publicacion` date NOT NULL,
-  `Imagenes` varchar(255) NOT NULL,
+  `iDImg` int(255) NOT NULL,
   `ID_usuario` int(255) NOT NULL,
   `Propiedad Para` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `Publicaciones`
+-- Volcado de datos para la tabla `publicaciones`
 --
 
-INSERT INTO `Publicaciones` (`ID_publicacion`, `Tipo`, `Barrio`, `Domicilio`, `Numero de Habitaciones`, `Precio`, `Numero de Contacto`, `Email`, `Descripcion`, `Fecha de Publicacion`, `Imagenes`, `ID_usuario`, `Propiedad Para`) VALUES
-(1, 'Departamento', 'Puerto Madero', 'Juana Manso 305, Piso 3A', 3, 30000, '1145402569', 'juanp@gmail.com', '', '2018-11-13', '', 1, 'Alquilar'),
-(2, 'Casa', 'Devoto', 'Nueva York 3512', 2, 3000000, '1145876399', 'paschen@gmail.com', '', '2018-11-04', '', 2, 'Comprar'),
-(3, 'Lote', 'Belgrano', '', 0, 10000000, '1145402569', 'juanp@gmail.com', '', '2018-11-06', '', 1, 'Comprar'),
-(4, 'Departamento', 'Recoleta', 'Montevideo 58', 2, 25000, '1145876399', 'paschen@gmail.com', '', '2018-11-09', '', 2, 'Alquilar');
+INSERT INTO `publicaciones` (`ID_publicacion`, `ID_Tipo`, `Domicilio`, `idBarrio`, `Numero de Habitaciones`, `Precio`, `Numero de Contacto`, `Email`, `Descripcion`, `Fecha de Publicacion`, `iDImg`, `ID_usuario`, `Propiedad Para`) VALUES
+(1, 0, 'Juana Manso 305, Piso 3A', 1, 3, 30000, '1145402569', 'juanp@gmail.com', '', '2018-11-13', 1, 1, 'Alquilar'),
+(2, 0, 'Nueva York 3512', 1, 2, 3000000, '1145876399', 'paschen@gmail.com', '', '2018-11-04', 2, 2, 'Comprar'),
+(3, 0, '', 1, 0, 10000000, '1145402569', 'juanp@gmail.com', '', '2018-11-06', 3, 1, 'Comprar'),
+(4, 0, 'Montevideo 58', 1, 2, 25000, '1145876399', 'paschen@gmail.com', '', '2018-11-09', 4, 2, 'Alquilar');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `Pub_Elegidas`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE `Pub_Elegidas` (
-  `ID_publicacion` int(255) NOT NULL,
-  `ID_usuario` int(255) NOT NULL,
-  `Fecha Seleccionada` date NOT NULL,
-  `ID_eleccion` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `Pub_Elegidas`
---
-
-INSERT INTO `Pub_Elegidas` (`ID_publicacion`, `ID_usuario`, `Fecha Seleccionada`, `ID_eleccion`) VALUES
-(1, 2, '2018-11-06', 1),
-(2, 1, '2018-11-12', 2);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `Pub_Guardadasx_Usuario`
---
-
-CREATE TABLE `Pub_Guardadasx_Usuario` (
-  `ID_publicacion` int(11) NOT NULL,
-  `ID_Usuario` int(11) NOT NULL,
-  `ID_Guardada` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Volcado de datos para la tabla `Pub_Guardadasx_Usuario`
---
-
-INSERT INTO `Pub_Guardadasx_Usuario` (`ID_publicacion`, `ID_Usuario`, `ID_Guardada`) VALUES
-(3, 2, 1),
-(4, 1, 2);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `Usuarios`
---
-
-CREATE TABLE `Usuarios` (
+CREATE TABLE `usuarios` (
   `ID_usuario` int(255) NOT NULL,
   `Usuario` varchar(255) NOT NULL,
   `Contrasenia` varchar(255) NOT NULL,
@@ -106,10 +73,10 @@ CREATE TABLE `Usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Volcado de datos para la tabla `Usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `Usuarios` (`ID_usuario`, `Usuario`, `Contrasenia`, `Nombre`, `Apellido`, `Domicilio`, `Nro Telefono`, `Email`, `Mas Info`) VALUES
+INSERT INTO `usuarios` (`ID_usuario`, `Usuario`, `Contrasenia`, `Nombre`, `Apellido`, `Domicilio`, `Nro Telefono`, `Email`, `Mas Info`) VALUES
 (1, 'Juan123', 'muestra123', 'Juan', 'Perez', 'Pueyrredon 2000, CABA', '1145402569', 'juanp@gmail.com', ''),
 (2, 'Paschen', 'muestra2123', 'Nicolas', 'Paschetta', 'Peron 100, CABA', '1145876399', 'paschen@gmail.com', '');
 
@@ -118,32 +85,19 @@ INSERT INTO `Usuarios` (`ID_usuario`, `Usuario`, `Contrasenia`, `Nombre`, `Apell
 --
 
 --
--- Indices de la tabla `Publicaciones`
+-- Indices de la tabla `publicaciones`
 --
-ALTER TABLE `Publicaciones`
+ALTER TABLE `publicaciones`
   ADD PRIMARY KEY (`ID_publicacion`),
-  ADD KEY `ID_usuario` (`ID_usuario`);
+  ADD KEY `ID_usuario` (`ID_usuario`),
+  ADD KEY `idBarrio` (`idBarrio`),
+  ADD KEY `iDImg` (`iDImg`),
+  ADD KEY `Tipo` (`ID_Tipo`);
 
 --
--- Indices de la tabla `Pub_Elegidas`
+-- Indices de la tabla `usuarios`
 --
-ALTER TABLE `Pub_Elegidas`
-  ADD PRIMARY KEY (`ID_eleccion`),
-  ADD KEY `ID_publicacion` (`ID_publicacion`),
-  ADD KEY `ID_usuario` (`ID_usuario`);
-
---
--- Indices de la tabla `Pub_Guardadasx_Usuario`
---
-ALTER TABLE `Pub_Guardadasx_Usuario`
-  ADD PRIMARY KEY (`ID_Guardada`),
-  ADD KEY `ID_publicacion` (`ID_publicacion`),
-  ADD KEY `ID_Usuario` (`ID_Usuario`);
-
---
--- Indices de la tabla `Usuarios`
---
-ALTER TABLE `Usuarios`
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`ID_usuario`);
 
 --
@@ -151,45 +105,29 @@ ALTER TABLE `Usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `Publicaciones`
+-- AUTO_INCREMENT de la tabla `publicaciones`
 --
-ALTER TABLE `Publicaciones`
+ALTER TABLE `publicaciones`
   MODIFY `ID_publicacion` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT de la tabla `Pub_Elegidas`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
-ALTER TABLE `Pub_Elegidas`
-  MODIFY `ID_eleccion` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT de la tabla `Pub_Guardadasx_Usuario`
---
-ALTER TABLE `Pub_Guardadasx_Usuario`
-  MODIFY `ID_Guardada` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT de la tabla `Usuarios`
---
-ALTER TABLE `Usuarios`
+ALTER TABLE `usuarios`
   MODIFY `ID_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `Publicaciones`
+-- Filtros para la tabla `publicaciones`
 --
-ALTER TABLE `Publicaciones`
-  ADD CONSTRAINT `publicaciones_ibfk_1` FOREIGN KEY (`ID_usuario`) REFERENCES `Usuarios` (`ID_usuario`);
+ALTER TABLE `publicaciones`
+  ADD CONSTRAINT `publicaciones_ibfk_1` FOREIGN KEY (`ID_usuario`) REFERENCES `usuarios` (`ID_usuario`),
+  ADD CONSTRAINT `publicaciones_ibfk_2` FOREIGN KEY (`idBarrio`) REFERENCES `barrio` (`idBarrio`);
+COMMIT;
 
---
--- Filtros para la tabla `Pub_Elegidas`
---
-ALTER TABLE `Pub_Elegidas`
-  ADD CONSTRAINT `pub_elegidas_ibfk_1` FOREIGN KEY (`ID_publicacion`) REFERENCES `Publicaciones` (`ID_publicacion`),
-  ADD CONSTRAINT `pub_elegidas_ibfk_2` FOREIGN KEY (`ID_usuario`) REFERENCES `Usuarios` (`ID_usuario`);
-
---
--- Filtros para la tabla `Pub_Guardadasx_Usuario`
---
-ALTER TABLE `Pub_Guardadasx_Usuario`
-  ADD CONSTRAINT `pub_guardadasx_usuario_ibfk_1` FOREIGN KEY (`ID_Usuario`) REFERENCES `Usuarios` (`ID_usuario`),
-  ADD CONSTRAINT `pub_guardadasx_usuario_ibfk_2` FOREIGN KEY (`ID_publicacion`) REFERENCES `Publicaciones` (`ID_publicacion`);
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

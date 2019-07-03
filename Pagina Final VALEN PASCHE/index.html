@@ -4,6 +4,7 @@
 	<title>N&V Propiedades</title>
 	<link rel="icon" type="image/gif/png" href="nvico.ico">
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script type="text/javascript" src="test.js"></script>
 	<script type="text/javascript" src="idx.js"></script>
 	
@@ -74,8 +75,8 @@
 				</div>
 
 				<div class="range" id="precio">
-					<p>Valor Maximo: <span id="demo1"></span></p>
-					<input type="range" id="range1" value="0" name="range" min="0" max="100000000" class="rango" />
+					<p>Valor Maximo: <span id="demo1">50000</span></p>
+					<input type="range" id="range1" value="50000" name="range2" min="0" max="100000" class="rango" oninput="sl()" />
 				</div>												    
 				<div class="boton-busqueda">
 					<button onclick="" class="buscar" style="height: 55px;"><span class="txtbuscar">Buscar Propiedades</span></button>

@@ -1,3 +1,14 @@
+
+
+
+
+
+function sl(){
+document.getElementById("demo1").innerHTML=document.getElementById("range1").value;
+}
+
+
+
 function login(showhide){
 		if(showhide == "show"){
     		document.getElementById('popupbox').style.visibility="visible";
@@ -15,11 +26,3 @@ function login(showhide){
 	}
 
 
-var slider = document.getElementById("range1");
-var output = document.getElementById("demo1");
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
-}

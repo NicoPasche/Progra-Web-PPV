@@ -193,26 +193,26 @@ img:not(#logo1,#fb,#twitter,#insta,#pint){
 }
 #img1{
 	position: relative;
-	height: 4cm;
-	width: 4cm;
-	margin-left:-10px;
+	height: 4.2cm;
+	width: 4.2cm;
+	margin-left:-0.5cm;
 
 }
 #img2{
 	position: relative;
-	height: 4cm;
-	width: 4cm;
+	height: 4.2cm;
+	width: 4.2cm;
 }
 #img3{
 	position: relative;
-	height: 4cm;
-	width: 4cm;
+	height: 4.2cm;
+	width: 4.2cm;
 
 }
 #img4{
 	position: relative;
-	height: 4cm;
-	width: 4cm;
+	height: 4.2cm;
+	width: 4.2cm;
 
 }
 .file{
@@ -229,11 +229,11 @@ img:not(#logo1,#fb,#twitter,#insta,#pint){
 }
 #upd3{
 	top:50%;
-	left: 66%;
+	left: 67%;
 }
 #upd4{
 	top:25%;
-	left:75%;
+	left:76%;
 }
 #titulo{
 	font-family: "Poppins", sans-serif;

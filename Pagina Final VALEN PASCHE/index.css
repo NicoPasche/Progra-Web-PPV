@@ -211,6 +211,11 @@ select{
 
 
 }
+#demo1{
+  position: absolute;
+  left: 50%;
+  margin-top: 50%;
+}
 .select1{
 	position: relative;
 }

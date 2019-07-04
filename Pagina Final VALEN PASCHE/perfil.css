@@ -179,7 +179,7 @@ ul.sett {
 li a {
     display: block;
     color: #000;
-    padding: 18px 16px;
+    padding: 10% 8%;
     text-decoration: none;
     font-weight: bold;
 }
@@ -199,7 +199,7 @@ li a:hover {
 }
 
 .txtinfo{
-	padding: 10px;
+	padding: 5%;
 }
 
 #logo1{
@@ -210,9 +210,10 @@ li a:hover {
 }
 .info{
   background-color: #e6e6e6;
-  width: 10cm;
+  position: absolute;
+  width: 25%;
   color:black;
-  height: 65%;
+  height: 50%;
 }
 #back{
   width: 100%;

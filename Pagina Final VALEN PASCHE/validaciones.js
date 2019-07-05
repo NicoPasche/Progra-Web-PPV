@@ -28,6 +28,6 @@ function validacionTotal(){
 	if (vmail && vpas && vtel)
 		alert("Se ha registrado con exito.");
 	else
-		alert("Verifique sus datos en el registro.");
+		alert("Verifique sus datos en el registro:\n- Las contraseñas deben ser iguales.\n- El telefono debe tener minimo 8 digitos.\n- El Mail debe ser valido.");
 
 }

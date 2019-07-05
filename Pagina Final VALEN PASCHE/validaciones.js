@@ -25,7 +25,6 @@ function validaMail(contenido){
 		vmail=false;
 }
 function validacionTotal(){
-	alert(vmail);
 	if (vmail && vpas && vtel)
 		alert("Se ha registrado con exito.");
 	else

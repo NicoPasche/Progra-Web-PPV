@@ -24,35 +24,30 @@
 					<img src="nvpro.png"/>
 					<li id="unLi" class="unLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Usuario" /></li>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="pcPassword" type="password" maxlength="15" placeholder="Contraseña" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="pcPassword" type="password" maxlength="15" placeholder="Contraseña" onblur="contrasenia(this)" /></li>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="pcPassword" type="password" maxlength="15" placeholder="Confirme contraseña" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="pcPassword" type="password" maxlength="15" placeholder="Confirme contraseña" onblur="validacontrasenia(this)" /></li>
 					<li class="blank"></li>
 					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Nombre" /></li>
 					<li class="blank"></li>
 					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Apellido" /></li>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Numero de Telefono" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Numero de Telefono" onblur="validatel(this)"/></li>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="E-mail" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="mail" type="text" maxlength="15" placeholder="E-mail" onblur="validaMail(this)" /></li>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Domicilio" /></li>
-					
-
 				</ul>
-				<input type="submit" value="Registrarse" onsubmit=""/>
-				<div>				<a id="contraseña" href="contraseniaolvidada.html" style="margin-left: 22px;">¿Olvidaste tu contraseña? clickee aquí</a>
-				<a id="copyright" href="login.html">Loguee aquí</a>
+				<input type="submit" value="Registrarse" onclick= "validacionTotal()"/>
+				<a id="copyright" href="login.html"> Loguee aquí</a>
 				</div>
 			</div>
 		</div>
 	</div>
 	</div>
 	
-	<form action="/userRpm/LoginRpm.htm" method="get" id="loginForm" enctype="multipart/form-data">
+	<form action="/userRpm/LoginRpm.htm" method="post" id="loginForm" enctype="multipart/form-data">
 	    <input type="hidden" value="Save" name="Save" />    
 	</form>
-
 
 
 </body>

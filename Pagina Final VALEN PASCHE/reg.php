@@ -7,6 +7,42 @@
 	<title>login</title>
 </head>
 <body onkeypress="PCWin(event)" onload="pageLoad()">
+	<?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "nv_prop";
+    $valormail="";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    if ($_SERVER["REQUEST_METHOD"] == "POST")
+    { 
+    	$mailForm = $_POST['mail'];
+    	$sql = "SELECT 1 FROM usuarios WHERE email='$mailForm'";
+    	$result = $conn->query($sql);
+
+    	if ($result->num_rows > 0 )
+		{	
+       	$valormail="*".$mailForm . " esta en uso.";
+    	} 
+    	else 
+    	{
+		$passForm=$_POST['password'];
+		$nombreForm=$_POST['nombre'];
+		$apellidoForm=$_POST['apellido'];
+		$telForm=$_POST['telefono'];
+		$sql2 = "INSERT INTO usuarios (contrasenia,nombre,apellido,nrotelefono,email) VALUES ('$passForm','$nombreForm','$apellidoForm','$telForm','$mailForm')";
+		$conn->query($sql2);
+      	echo "Registrado correctamente";
+		}
+	}
+	$conn->close();
+	?>
 	<div id="top-wrapper" >
 		<div id="banner" class="top-header">
 			<div class="top-header-wrap">
@@ -17,72 +53,35 @@
 			<div id="noteDiv">
 				<p id="note"></p>
 		</div>
+	<form  method="post" id="loginForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
 		<div class="panelThre" align="center">
 			<div align="center" class="picDiv" align="center">
 				<ul style="padding-top: 0px;">
 					<img src="nvpro.png"/>
-					<li id="unLi" class="unLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Usuario" name="usuario" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="mail" type="text" maxlength="25" placeholder="E-mail"  name="mail" onkeyup="validaMail(this)" /></li>
+					<span class="error" style="display:none;color:red" id="mailinvalido">*Mail invalido.</span>
+					<span class="error" style="color:red"><?php echo $valormail;?></span>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="pcPassword" type="password" maxlength="15" placeholder="Contraseña" onblur="contrasenia(this)" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="password" type="password" name="password" maxlength="25" placeholder="Contraseña" onkeyup="contrasenia(this)" /></li>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="pcPassword" type="password" maxlength="15" placeholder="Confirme contraseña" onblur="validacontrasenia(this)" name="pswd" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="password2" type="password" name="password2"  maxlength="25" placeholder="Confirme contraseña" onkeyup="validacontrasenia(this)" /></li>
+					<span class="error" style="display:none;color:red" id="contraseniainvalida">*Las contraseñas no coinciden.</span>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Nombre" name="nombre" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="nombre" type="text" name="nombre"  maxlength="25" placeholder="Nombre" onkeyup="validanombre(this)"/></li>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Apellido" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="apellido" type="text" name="apellido"  maxlength="25" placeholder="Apellido" onkeyup="validaapellido(this)" /></li>
 					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="userName" type="text" maxlength="15" placeholder="Numero de Telefono" onblur="validatel(this)"/></li>
-					<li class="blank"></li>
-					<li id="pwLi" class="pwLi"><input class="text" id="mail" type="text" maxlength="15" placeholder="E-mail" onblur="validaMail(this)" /></li>
+					<li id="pwLi" class="pwLi"><input class="text" id="telefono" type="text" name="telefono"  maxlength="15" placeholder="Numero de Telefono" onkeyup="validatel(this)"/></li>
+					<span class="error" style="display:none;color:red" id="telinvalido">*Telefono invalido.</span>
 					<li class="blank"></li>
 				</ul>
-				<input type="submit" value="Registrarse" onclick= "validacionTotal()"/>
+					<input type="submit" value="Registrarse" id="registrarse" onclick="validacionTotal()" disabled/>
 				<a id="copyright" href="login.html"> Loguee aquí</a>
 				</div>
 			</div>
-		</div>
-	</div>
-	</div>
-	
-	<form action="/userRpm/LoginRpm.htm" method="post" id="loginForm" enctype="multipart/form-data">
-	    <input type="hidden" value="Save" name="Save" />    
+		</div>  
 	</form>
-
-
-
-
-
-
-
-		<?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "nv_prop";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-
-
-
-
-
-    $sql = "SELECT usuario FROM usuarios";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "usuarios en uso: " . $row["usuario"] ."<br>";
-        }
-    } else {
-        echo "0 results";
-    }
-    $conn->close();
-?>
+	</div>
+	</div>
 </body>
 </html>

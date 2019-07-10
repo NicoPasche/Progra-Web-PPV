@@ -57,7 +57,7 @@
 		<div class="panelThre" align="center">
 			<div align="center" class="picDiv" align="center">
 				<ul style="padding-top: 0px;">
-					<img src="nvpro.png"/>
+					<img src="img/nvpro.png" id="logo">
 					<li id="pwLi" class="pwLi"><input class="text" id="mail" type="text" maxlength="25" placeholder="E-mail"  name="mail" onkeyup="validaMail(this)" /></li>
 					<span class="error" style="display:none;color:red" id="mailinvalido">*Mail invalido.</span>
 					<span class="error" style="color:red"><?php echo $valormail;?></span>

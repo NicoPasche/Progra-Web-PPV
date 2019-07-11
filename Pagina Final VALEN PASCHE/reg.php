@@ -20,6 +20,7 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
+    session_start();
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     { 
     	$mailForm = $_POST['mail'];
@@ -38,7 +39,11 @@
 		$telForm=$_POST['telefono'];
 		$sql2 = "INSERT INTO usuarios (contrasenia,nombre,apellido,nrotelefono,email) VALUES ('$passForm','$nombreForm','$apellidoForm','$telForm','$mailForm')";
 		$conn->query($sql2);
-      	echo "Registrado correctamente";
+		$sql3 = "SELECT id FROM usuarios WHERE email='$mailForm'";
+		$id=$conn->query($sql3);
+		$_SESSION['userid']= $id;
+		header('Location: index.php');
+
 		}
 	}
 	$conn->close();
@@ -76,7 +81,7 @@
 					<li class="blank"></li>
 				</ul>
 					<input type="submit" value="Registrarse" id="registrarse" onclick="validacionTotal()" disabled/>
-				<a id="copyright" href="login.html"> Loguee aquí</a>
+				<a id="copyright" href="login.html"> Inicia sesión aquí</a>
 				</div>
 			</div>
 		</div>  

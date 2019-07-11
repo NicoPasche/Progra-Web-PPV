@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-07-2019 a las 22:43:31
+-- Tiempo de generación: 11-07-2019 a las 22:11:19
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.6
 
@@ -149,6 +149,14 @@ CREATE TABLE `tipo` (
   `tipo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tipo`
+--
+
+INSERT INTO `tipo` (`id`, `tipo`) VALUES
+(1, 'Casa'),
+(2, 'Departamento');
+
 -- --------------------------------------------------------
 
 --
@@ -171,7 +179,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `contrasenia`, `nombre`, `apellido`, `nrotelefono`, `email`) VALUES
 (1, 'asdadad', 'pablo', 'dubosc', '12131231231', 'adaa@gmail.com'),
 (2, 'a', 'a', 'a', '123123122', 'a@gmail.com'),
-(3, 'w', 'tomas', 'dubosc', '12312313', 'hola@gmail.com');
+(3, 'w', 'tomas', 'dubosc', '12312313', 'hola@gmail.com'),
+(4, 'pipi', 'gob', 'dubosc', '121212121', 'gg@uuu.com');
 
 --
 -- Índices para tablas volcadas
@@ -265,13 +274,13 @@ ALTER TABLE `publicacionesimagenes`
 -- AUTO_INCREMENT de la tabla `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
